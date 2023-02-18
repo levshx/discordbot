@@ -1,5 +1,5 @@
 import dimscord, asyncdispatch, strutils, options
-import tables, random
+import tables, random, os
 const token = ""
 let discord = newDiscordClient(token)
 

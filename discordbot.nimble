@@ -11,5 +11,11 @@ bin           = @["discordbot"]
 
 requires "dimscord >= 1.4.0"
 
+import os
+
 task dev, "Run dev version":
-  exec "nim c --nimcache:\"temp\" -o:\"bin/discordbot\" -r ./src/discordbot.nim "
+  if not fileExists("discord.key"):
+    writeFile("discord.key", "---PASTE DISCORD OAUTH HERE---")
+    echo "PASTE DISCORD OAUTH IN discord.key"
+  else:
+    exec "nim c --nimcache:\"temp\" -o:\"bin/discordbot\" -r ./src/discordbot.nim "
