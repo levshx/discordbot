@@ -1,6 +1,8 @@
 import dimscord, asyncdispatch, strutils, options
 import tables, random, os
-const token = ""
+
+const token = staticRead("../discord.key")
+
 let discord = newDiscordClient(token)
 
 
